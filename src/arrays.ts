@@ -1,5 +1,3 @@
-import { parseIsolatedEntityName } from "typescript";
-
 /**
  * Consume an array of numbers, and return a new array containing
  * JUST the first and last number. If there are no elements, return
@@ -78,7 +76,13 @@ export function countShortWords(words: string[]): number {
  * then return true.
  */
 export function allRGB(colors: string[]): boolean {
-    return false;
+    if (colors.length === 0) return true;
+    const newColors = colors.filter(
+        (value: string): boolean =>
+            value === "red" || value === "green" || value === "blue"
+    );
+    if (newColors.length !== colors.length) return false;
+    else return true;
 }
 
 /**
@@ -89,7 +93,14 @@ export function allRGB(colors: string[]): boolean {
  * And the array [] would become "0=0".
  */
 export function makeMath(addends: number[]): string {
-    return "";
+    if (addends.length === 0) {
+        return "0=0";
+    }
+    const sum = addends.reduce(
+        (currentTotal: number, num: number) => currentTotal + num,
+        0
+    );
+    return sum.toString() + "=" + addends.join("+");
 }
 
 /**
@@ -102,5 +113,23 @@ export function makeMath(addends: number[]): string {
  * And the array [1, 9, 7] would become [1, 9, 7, 17]
  */
 export function injectPositive(values: number[]): number[] {
-    return [];
+    const anyNegs = values.some((value: number): boolean => value < 0);
+    if (!anyNegs) {
+        const noNegsSum = values.reduce(
+            (currentTotal: number, num: number) => currentTotal + num,
+            0
+        );
+        return [...values, noNegsSum];
+    } else {
+        const negIndex = values.findIndex(
+            (value: number): boolean => value < 0
+        );
+        const beforeNeg = [...values].slice(0, negIndex);
+        const afterNeg = [...values].slice(negIndex + 1);
+        const beforeNegSum = beforeNeg.reduce(
+            (currentTotal: number, num: number) => currentTotal + num,
+            0
+        );
+        return [...beforeNeg, values[negIndex], beforeNegSum, ...afterNeg];
+    }
 }
