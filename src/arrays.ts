@@ -1,3 +1,5 @@
+import { parseIsolatedEntityName } from "typescript";
+
 /**
  * Consume an array of numbers, and return a new array containing
  * JUST the first and last number. If there are no elements, return
@@ -27,7 +29,9 @@ export function tripleNumbers(numbers: number[]): number[] {
  * the number cannot be parsed as an integer, convert it to 0 instead.
  */
 export function stringsToIntegers(numbers: string[]): number[] {
-    return [];
+    return numbers.map((value: string): number =>
+        isNaN(parseInt(value)) ? 0 : parseInt(value)
+    );
 }
 
 /**
@@ -38,7 +42,12 @@ export function stringsToIntegers(numbers: string[]): number[] {
  */
 // Remember, you can write functions as lambdas too! They work exactly the same.
 export const removeDollars = (amounts: string[]): number[] => {
-    return [];
+    const newAmounts = amounts.map((value: string): string =>
+        value.charAt(0) == "$" ? value.substring(1) : value
+    );
+    return newAmounts.map((value: string): number =>
+        isNaN(parseInt(value)) ? 0 : parseInt(value)
+    );
 };
 
 /**
