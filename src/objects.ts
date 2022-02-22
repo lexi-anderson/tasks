@@ -81,10 +81,7 @@ export function toShortForm(question: Question): string {
 export function toMarkdown(question: Question): string {
     const string1 = "# " + question.name + "\n" + question.body;
     if (question.type === "multiple_choice_question") {
-        return (
-            string1 +
-            question.options.map((value: string): string => "\n- " + value)
-        );
+        return string1 + "\n- " + question.options.join("\n- ");
     }
     return string1;
 }
