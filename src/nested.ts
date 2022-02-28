@@ -176,7 +176,12 @@ export function renameQuestionById(
     targetId: number,
     newName: string
 ): Question[] {
-    return [];
+    return questions.map(
+        (value: Question): Question => ({
+            ...value,
+            name: value.id === targetId ? newName : value.name
+        })
+    );
 }
 
 /***
@@ -191,7 +196,17 @@ export function changeQuestionTypeById(
     targetId: number,
     newQuestionType: QuestionType
 ): Question[] {
-    return [];
+    return questions.map(
+        (value: Question): Question => ({
+            ...value,
+            type: value.id === targetId ? newQuestionType : value.type,
+            options:
+                value.id === targetId &&
+                newQuestionType === "short_answer_question"
+                    ? []
+                    : value.options
+        })
+    );
 }
 
 /**
