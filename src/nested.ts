@@ -6,7 +6,7 @@ import { Question, QuestionType } from "./interfaces/question";
  * that are `published`.
  */
 export function getPublishedQuestions(questions: Question[]): Question[] {
-    return [];
+    return questions.filter((value: Question) => value.published === true);
 }
 
 /**
@@ -15,7 +15,14 @@ export function getPublishedQuestions(questions: Question[]): Question[] {
  * `expected`, and an empty array for its `options`.
  */
 export function getNonEmptyQuestions(questions: Question[]): Question[] {
-    return [];
+    return questions.filter(
+        (value: Question) =>
+            !(
+                value.body === "" &&
+                value.expected === "" &&
+                value.options.length === 0
+            )
+    );
 }
 
 /***
@@ -26,7 +33,12 @@ export function findQuestion(
     questions: Question[],
     id: number
 ): Question | null {
-    return null;
+    const found = questions.find((value: Question) => value.id === id);
+    if (found === undefined) {
+        return null;
+    } else {
+        return found;
+    }
 }
 
 /**
@@ -34,7 +46,7 @@ export function findQuestion(
  * with the given `id`.
  */
 export function removeQuestion(questions: Question[], id: number): Question[] {
-    return [];
+    return questions.filter((value: Question) => value.id !== id);
 }
 
 /***
