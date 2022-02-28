@@ -1,6 +1,6 @@
 import { Answer } from "./interfaces/answer";
 import { Question, QuestionType } from "./interfaces/question";
-import { makeBlankQuestion } from "./objects";
+import { duplicateQuestion, makeBlankQuestion } from "./objects";
 
 /**
  * Consumes an array of questions and returns a new array with only the questions
@@ -224,8 +224,29 @@ export function editOption(
     targetId: number,
     targetOptionIndex: number,
     newOption: string
-) {
-    return [];
+): Question[] {
+    return questions.map(
+        (value: Question): Question => ({
+            ...value,
+            options:
+                value.id === targetId
+                    ? insertOption(value.options, targetOptionIndex, newOption)
+                    : value.options
+        })
+    );
+}
+function insertOption(
+    oldOptions: string[],
+    targetOptionIndex: number,
+    newOption: string
+): string[] {
+    if (targetOptionIndex === -1) {
+        return [...oldOptions, newOption];
+    } else {
+        const beforeIndex = [...oldOptions].slice(0, targetOptionIndex);
+        const afterIndex = [...oldOptions].slice(targetOptionIndex + 1);
+        return [...beforeIndex, newOption, ...afterIndex];
+    }
 }
 
 /***
@@ -239,5 +260,14 @@ export function duplicateQuestionInArray(
     targetId: number,
     newId: number
 ): Question[] {
-    return [];
+    const targetQuestionIndex = questions.findIndex(
+        (value: Question) => value.id === targetId
+    );
+    const newQuestion = duplicateQuestion(
+        newId,
+        questions[targetQuestionIndex]
+    );
+    const beforeIndex = [...questions].slice(0, targetQuestionIndex + 1);
+    const afterIndex = [...questions].slice(targetQuestionIndex + 1);
+    return [...beforeIndex, newQuestion, ...afterIndex];
 }
