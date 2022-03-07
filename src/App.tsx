@@ -18,7 +18,7 @@ function App(): JSX.Element {
                 This is the header/banner of the Lexi UD CISC275 website.
             </header>
             <hr></hr>
-            {/* <DoubleHalf></DoubleHalf> */}
+            <DoubleHalf></DoubleHalf>
             <hr></hr>
             <ChooseTeam></ChooseTeam>
             <hr></hr>
