@@ -17,6 +17,7 @@ import { EditMode } from "./form-components/EditMode";
 import { MultipleChoiceQuestion } from "./form-components/MultipleChoiceQuestion";
 import { ChangeColor } from "./form-components/ChangeColor";
 import { Quizzer } from "./quizzer/Quizzer";
+import QuizzerSketch from "./images/Quizzer_sketch.jpg";
 
 export function ShowHideTasks(): JSX.Element {
     const [visible, setVisible] = useState<boolean>(false);
@@ -74,6 +75,14 @@ function App(): JSX.Element {
             </header>
             <Quizzer></Quizzer>
             <hr></hr>Sketch
+            <div>
+                <img
+                    src={QuizzerSketch}
+                    height="500"
+                    width="1000"
+                    alt="Image of quizzer sketch"
+                />
+            </div>
             <hr></hr>List of Completed Requirements
             <hr></hr>
             <ShowHideTasks></ShowHideTasks>
