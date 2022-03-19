@@ -1,0 +1,176 @@
+[
+    {
+        "id": 1,
+        "title": "Technology and Science Trivia",
+        "numquestions": 3,
+        "description": "These trivia questions focus on cellular phones, computer shortcuts, and social media.",
+        "questions": [
+            {
+                "id": 1,
+                "name": "First iPhone",
+                "body": "What year was the very first model of the iPhone released?",
+                "type": "multiple_choice_question",
+                "options": ["2006", "2007", "2008"],
+                "expected": "2007",
+                "points": 1,
+                "published": true
+            },
+            {
+                "id": 2,
+                "name": "Copy Function",
+                "body": "What’s the shortcut for the “copy” function on most computers?",
+                "type": "multiple_choice_question",
+                "options": ["ctrl c", "ctrl p", "ctrl r"],
+                "expected": "ctrl c",
+                "points": 1,
+                "published": true
+            },
+            {
+                "id": 3,
+                "name": "Twitter Name",
+                "body": "What was Twitter’s original name?",
+                "type": "short_answer_question",
+                "options": [],
+                "expected": "twttr",
+                "points": 2,
+                "published": true
+            }
+        ]
+    },
+    {
+        "id": 2,
+        "title": "Science Trivia",
+        "numquestions": 2,
+        "description": "This part focuses on the weather, planets, and elements.",
+        "questions": [
+            {
+                "id": 1,
+                "name": "Electric Charge",
+                "body": "What part of the atom has no electric charge?",
+                "type": "short_answer_question",
+                "options": [],
+                "expected": "neutron",
+                "points": 2,
+                "published": true
+            },
+            {
+                "id": 2,
+                "name": "Hottest Planet",
+                "body": "Which planet is the hottest in the solar system?",
+                "type": "multiple_choice_question",
+                "options": ["Mercury", "Venus", "Earth"],
+                "expected": "Venus",
+                "points": 1,
+                "published": true
+            }
+        ]
+    },
+    {
+        "id": 3,
+        "title": "Marvel Trivia",
+        "numquestions": 3,
+        "description": "The following questions cover one of the biggest superhero comic houses in the world – Marvel.",
+        "questions": [
+            {
+                "id": 1,
+                "name": "Hawkeye",
+                "body": "What is Hawkeye's real name?",
+                "type": "short_answer_question",
+                "options": [],
+                "expected": "Clint Barton",
+                "points": 3,
+                "published": true
+            },
+            {
+                "id": 2,
+                "name": "Hulk",
+                "body": "Who is the only avenger who can calm the Hulk down?",
+                "type": "short_answer_question",
+                "options": [],
+                "expected": "Black Widow",
+                "points": 3,
+                "published": true
+            },
+            {
+                "id": 3,
+                "name": "Infinity Stones",
+                "body": "Which infinity stone was located on Vormir?",
+                "type": "multiple_choice_question",
+                "options": ["mind", "time", "soul"],
+                "expected": "soul",
+                "points": 1,
+                "published": true
+            }
+        ]
+    },
+    {
+        "id": 4,
+        "title": "Movie and TV Trivia",
+        "numquestions": 2,
+        "description": "These questions are all about entertainment topics.",
+        "questions": [
+            {
+                "id": 1,
+                "name": "Frozen",
+                "body": "What is the name of the song that Queen Elsa sings as she builds her ice castle in the movie Frozen?",
+                "type": "short_answer_question",
+                "options": [],
+                "expected": "Let It Go",
+                "points": 2,
+                "published": true
+            },
+            {
+                "id": 2,
+                "name": "Titanic",
+                "body": "What was the name of the actor who played Jack Dawson in Titanic?",
+                "type": "multiple_choice_question",
+                "options": [
+                    "Leonardo DiCaprio",
+                    "Matt Damon",
+                    "Channing Tatum"
+                ],
+                "expected": "Leonardo DiCaprio",
+                "points": 1,
+                "published": true
+            }
+        ]
+    },
+    {
+        "id": 5,
+        "title": "Music Trivia",
+        "numquestions": 3,
+        "description": "The music trivia questions below will test your knowledge about songs and artists across many genres.",
+        "questions": [
+            {
+                "id": 1,
+                "name": "Justin Timberlake",
+                "body": "What was the name of the group Justin Timberlake used to be part of?",
+                "type": "short_answer_question",
+                "options": [],
+                "expected": "N' SYNC",
+                "points": 3,
+                "published": true
+            },
+            {
+                "id": 2,
+                "name": "Taylor Swift",
+                "body": "What genre of music did Taylor Swift start in?",
+                "type": "multiple_choice_question",
+                "options": ["pop", "rap", "country"],
+                "expected": "country",
+                "points": 1,
+                "published": true
+            },
+            {
+                "id": 3,
+                "name": "Jay-Z",
+                "body": "Which musical legend is Jay-Z married to?",
+                "type": "short_answer_question",
+                "options": [],
+                "expected": "Beyonce",
+                "points": 2,
+                "published": true
+            }
+        ]
+    }
+]

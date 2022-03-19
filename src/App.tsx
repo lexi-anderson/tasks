@@ -84,6 +84,7 @@ function App(): JSX.Element {
                 />
             </div>
             <hr></hr>List of Completed Requirements
+            <li>Quizzes are Visible</li>
             <hr></hr>
             <ShowHideTasks></ShowHideTasks>
             <hr></hr>Task 3 Image:
